@@ -1,3 +1,23 @@
+/**
+ * This file is part of Gauss-Newton Solver.
+ *
+ * Copyright (C) 2018-2020 Dongsheng Yang <ydsf16@buaa.edu.cn> (Beihang University)
+ * For more information see <https://github.com/ydsf16/Gauss_Newton_solver>
+ *
+ * Gauss_Newton_solver is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Gauss_Newton_solver is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Gauss_Newton_solver. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #include <iostream>
 #include <eigen3/Eigen/Core>
 #include <vector>
@@ -7,6 +27,7 @@
 #include <eigen3/Eigen/SVD>
 #include <chrono>
 
+/* 计时类 */
 class Runtimer{
 public:
     inline void start()
@@ -29,7 +50,7 @@ private:
     std::chrono::steady_clock::time_point t_e_; //stop time point
 };
 
-// 优化方程
+/*  优化方程 */
 class CostFunction{
 public:
         CostFunction(double* a, double* b, double* c, int max_iter, double min_step, bool is_out):
