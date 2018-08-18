@@ -124,9 +124,9 @@ public:
                 t.stop();
                 if( is_out_ )
                 {
-                    std::cout << "Iter: " << i << "\t\tResult: " << *a_ << " " << *b_ << " " << *c_ << 
-                    "\t\tstep: " << delta << "\t\tcost: " << getCost() << "\t\ttime: " << t.duration()  <<
-                    "\t\ttotal_time: "<< (sumt += t.duration()) << std::endl;
+                    std::cout << "Iter: " << std::left <<std::setw(3) << i << " Result: "<< std::left <<std::setw(10)  << *a_ << " " << std::left <<std::setw(10)  << *b_ << " " << std::left <<std::setw(10) << *c_ << 
+                    " step: " << std::left <<std::setw(14) << delta << " cost: "<< std::left <<std::setw(14)  << getCost() << " time: " << std::left <<std::setw(14) << t.duration()  <<
+                    " total_time: "<< std::left <<std::setw(14) << (sumt += t.duration()) << std::endl;
                 }
                 if( delta < min_step_)
                 {
@@ -167,7 +167,7 @@ int main(int argc, char **argv) {
     CostFunction cost_func(&a, &b, &c, 50, 1e-10, true);
     
     /* 制造数据 */
-    const size_t N = 1000; //数据个数
+    const size_t N = 100; //数据个数
     cv::RNG rng(cv::getTickCount());
     for( size_t i = 0; i < N; i ++)
     {
